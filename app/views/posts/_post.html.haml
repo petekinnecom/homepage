@@ -1,0 +1,8 @@
+.post
+  .title
+    = post.title
+  .body
+    = Kramdown::Document.new(post.body).to_html.html_safe
+  .link
+    = nice_time(post.created_at)
+

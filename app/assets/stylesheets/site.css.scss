@@ -1,0 +1,57 @@
+/*scheme: http://www.colorschemer.com/schemes/viewscheme.php?id=10082*/
+/*background dark*/
+$bgd: #000;
+/*background light*/
+$bgl: #F2F1ED;
+/*highlight dark*/
+$hld: #444;
+/*highlight light*/
+$hll: #999;
+/*link light*/
+$ll: #DE5A51;
+/*link dark*/
+$ld: #000;
+
+body
+{
+  background-color: $bgl;
+}
+
+#container
+{
+  width: 720px;
+  margin: auto;
+  background-color: $bgl;
+  padding-top: 20px;
+  color: $hld;
+
+  a
+  {
+    color: $ll;
+    font-weight: bold;
+    /*border-radius: 4px;*/
+    text-decoration: none;
+    margin-bottom: 1px;
+
+    &:hover
+    {
+      border-bottom: 1px solid $hll;
+      background: none;
+      margin-bottom: 0px;
+    }
+
+    &:visited
+    {
+    }
+  }
+
+  #title-bar
+  {
+    width: 100%;
+    font-size: 300%;
+    line-height: 1em;
+    font-weight: bold;
+    padding-bottom: 20px;
+  }
+}
+

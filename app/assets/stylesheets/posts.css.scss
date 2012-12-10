@@ -1,3 +1,36 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*background dark*/
+$bgd: #000;
+/*background light*/
+$bgl: #F2F1ED;
+/*highlight dark*/
+$hld: #444;
+/*highlight light*/
+$hlh: #999;
+/*link light*/
+$ll: #DE5A51;
+/*link dark*/
+$ld: #000;
+.post
+{
+  margin-top: 30px;
+  border-bottom: 1px solid $hld;
+
+  .title
+  {
+    width: 100%;
+    font-size: 220%;
+    font-weight: bold;
+    line-height: 1em;
+  }
+
+  .body
+  {
+    padding-top:1em;
+  }
+
+  .link
+  {
+    width: 100%;
+    text-align: right;
+  }
+}
