@@ -1,1 +1,3 @@
-console.log('hi');
+$(function(){
+  $('body').html('hello from js');
+});
