@@ -1,0 +1,1 @@
+nohup guard -i >> log/development.log & nohup bundle exec rake server:start >> log/development.log & tail -f log/development.log
