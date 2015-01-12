@@ -1,11 +1,11 @@
-var thing = require('../assets/javascripts/stuff');
+var stuff = require('stuff');
 
-describe('thing', function(){
+describe('stuff', function(){
   it('should fail', function(){
-    expect(thing).toBe('thing module');
+    expect(stuff).toBe('thing module');
   });
 
   it('should pass', function(){
-    expect(thing).toBe('stuff module');
+    expect(stuff).toBe('stuff module');
   });
 });
