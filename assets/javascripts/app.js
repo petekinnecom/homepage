@@ -1,3 +1,3 @@
-$(function(){
-  $('body').html('hello from js');
-});
+function equalsThree(){
+  return 3;
+}
