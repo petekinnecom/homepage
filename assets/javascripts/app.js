@@ -1,6 +1,6 @@
-//= require 'vendor/require'
-//= require 'vendor/jquery.min'
+stuff = require('./stuff');
+$ = require('./vendor/jquery.min');
 
-define('thing', [], function(){
-  return 3;
+$(function(){
+  $('body').html('hello from js');
 });
