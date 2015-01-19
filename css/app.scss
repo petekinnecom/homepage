@@ -50,6 +50,9 @@ html * {
   &:before {
     content: '$: ';
   }
+}
+
+@mixin cursor() {
   &:after {
     content: '█';
   }
@@ -62,6 +65,15 @@ html * {
   @include prompt();
   color: $cyan;
   font-weight: 800;
+}
+
+.terminal-input--hidden {
+  background: white;
+  width: 100%;
+  height: 1em;
+  position: absolute;
+  left: 0px;
+  top: -100px;
 }
 
 .terminal-output--log {
@@ -78,6 +90,7 @@ html * {
 
 .terminal-input {
   @include prompt();
+  @include cursor();
 
   width: 100%;
   min-height: 1em;
