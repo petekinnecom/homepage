@@ -1,3 +1,4 @@
 site/assets/*
 log/development.log
 test_site/compiled_specs.js
+.sass-cache/
