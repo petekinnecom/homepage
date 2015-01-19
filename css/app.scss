@@ -46,10 +46,20 @@ html * {
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 };
 
+@mixin prompt() {
+  &:before {
+    content: '$: ';
+  }
+  &:after {
+    content: '█';
+  }
+}
+
 .terminal-output {
 }
 
 .terminal-output--input {
+  @include prompt();
   color: $cyan;
   font-weight: 800;
 }
@@ -66,3 +76,14 @@ html * {
   color: $red;
 }
 
+.terminal-input {
+  @include prompt();
+
+  width: 100%;
+  min-height: 1em;
+
+  &:focus {
+    outline: none;
+  }
+
+}
