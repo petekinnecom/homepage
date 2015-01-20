@@ -48,13 +48,7 @@ html * {
 
 @mixin prompt() {
   &:before {
-    content: '$: ';
-  }
-}
-
-@mixin cursor() {
-  &:after {
-    content: '█';
+    content: '$ ';
   }
 }
 
@@ -88,9 +82,14 @@ html * {
   color: $red;
 }
 
+.caret {
+  
+  background-color: $base0;
+  color: $base03;
+}
+
 .terminal-input {
   @include prompt();
-  @include cursor();
 
   width: 100%;
   min-height: 1em;
