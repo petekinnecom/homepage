@@ -63,10 +63,10 @@ html * {
 
 .terminal-input--hidden {
   background: white;
-  width: 100%;
+  width: 1%;
   height: 1em;
   position: absolute;
-  left: 0px;
+  left: -100px;
   top: -100px;
 }
 
