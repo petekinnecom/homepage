@@ -1,3 +1,5 @@
+require 'page_objects/terminal'
+
 class MainPage < AePageObjects::Document
 
   element :title, locator: ".article h1"
