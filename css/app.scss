@@ -17,7 +17,7 @@ $blue:      #268bd2;
 $cyan:      #2aa198;
 $green:     #859900;
 
-@mixin rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3) 
+@mixin rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3)
 {
     background-color:$rebase03;
     color:$rebase0;
@@ -44,6 +44,11 @@ html * {
 .terminal {
   @include dark();
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  min-width: 384px;
+  width: 40%;
+  padding: 16px;
+  height: 80%;
+  overflow-y: scroll;
 };
 
 @mixin prompt() {
@@ -53,6 +58,7 @@ html * {
 }
 
 .terminal-output {
+  margin-top: 0px;
 }
 
 .terminal-output--input {
@@ -83,7 +89,7 @@ html * {
 }
 
 .caret {
-  
+
   background-color: $base0;
   color: $base03;
 }
@@ -98,4 +104,14 @@ html * {
     outline: none;
   }
 
+}
+
+.main-screen-turn-on {
+  width: 70%;
+  padding: 16px;
+}
+
+.container {
+  display: flexbox;
+  display: -webkit-box;
 }
