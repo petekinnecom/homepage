@@ -34,6 +34,14 @@ $green:     #859900;
 @mixin light() { @include rebase($base3,$base2,$base1,$base0,$base00,$base01,$base02,$base03)}
 @mixin dark()  { @include rebase($base03,$base02,$base01,$base00,$base0,$base1,$base2,$base3)}
 
+@mixin fadeIn() {
+  animation:demo 0.5s;
+  -moz-animation:demo 0.5s; /* Firefox */
+  -webkit-animation:demo 0.5s; /* Safari and Chrome */
+  -o-animation:demo 0.5s; /* Opera */
+  animation:demo 0.5s infinite;
+}
+
 html * {
     color-profile: sRGB;
     rendering-intent: auto;
@@ -78,14 +86,17 @@ html * {
 
 .terminal-output--log {
   color: $base0;
+  @include fadeIn()
 }
 
 .terminal-output--win {
   color: $green;
+  @include fadeIn()
 }
 
 .terminal-output--warn {
   color: $red;
+  @include fadeIn()
 }
 
 .caret {
@@ -114,4 +125,28 @@ html * {
 .container {
   display: flexbox;
   display: -webkit-box;
+}
+
+
+@keyframes demo 
+{
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-moz-keyframes demo /* Firefox */
+{
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-webkit-keyframes demo /* Safari and Chrome */
+{
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-o-keyframes demo /* Opera */ {
+0% {opacity:0;}
+100% {opacity:1;}
 }
