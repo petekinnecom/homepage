@@ -122,9 +122,13 @@ html * {
 
 }
 
-.main-screen-turn-on {
+.main-window {
   width: 70%;
   padding: 16px;
+}
+
+.is-hijacking-link .main-window {
+  opacity: 0.2;
 }
 
 .container {
