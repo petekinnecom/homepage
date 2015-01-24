@@ -34,20 +34,24 @@ $green:     #859900;
 @mixin light() { @include rebase($base3,$base2,$base1,$base0,$base00,$base01,$base02,$base03)}
 @mixin dark()  { @include rebase($base03,$base02,$base01,$base00,$base0,$base1,$base2,$base3)}
 
-@mixin fadeIn() {
-  animation:demo 0.5s;
-  -moz-animation:demo 0.5s; /* Firefox */
-  -webkit-animation:demo 0.5s; /* Safari and Chrome */
-  -o-animation:demo 0.5s; /* Opera */
-  animation:demo 0.5s infinite;
-}
-
 html * {
     color-profile: sRGB;
     rendering-intent: auto;
 }
 
 //END SOLARIZED
+
+@mixin fadeIn($speed) {
+  animation:demo $speed;
+  -moz-animation:demo $speed; /* Firefox */
+  -webkit-animation:demo $speed; /* Safari and Chrome */
+  -o-animation:demo $speed; /* Opera */
+  animation:demo $speed;
+}
+
+@mixin fadeInFast(){
+  @include fadeIn(0.5s);
+}
 
 .terminal {
   @include dark();
@@ -86,17 +90,17 @@ html * {
 
 .terminal-output--log {
   color: $base0;
-  @include fadeIn()
+  @include fadeInFast()
 }
 
 .terminal-output--win {
   color: $green;
-  @include fadeIn()
+  @include fadeInFast()
 }
 
 .terminal-output--warn {
   color: $red;
-  @include fadeIn()
+  @include fadeInFast()
 }
 
 .caret {
@@ -126,7 +130,6 @@ html * {
   display: flexbox;
   display: -webkit-box;
 }
-
 
 @keyframes demo 
 {
