@@ -69,6 +69,20 @@ html * {
   }
 }
 
+.terminal {
+  & [data-prompt-name="default"] {
+    &:after {
+      content: '[ default ]';
+    }
+  }
+
+  & [data-prompt-name="adventure"] {
+    &:after {
+      content: '[ adventure ]';
+    }
+  }
+}
+
 .terminal-output {
   margin-top: 0px;
 }
