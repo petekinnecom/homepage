@@ -63,22 +63,16 @@ html * {
   overflow-y: scroll;
 }
 
-@mixin prompt() {
-  &:before {
-    content: '$ ';
-  }
-}
-
 .terminal {
   & [data-prompt-name="default"] {
-    &:after {
-      content: '[ default ]';
+    &:before {
+      content: '$ ';
     }
   }
 
   & [data-prompt-name="adventure"] {
-    &:after {
-      content: '[ adventure ]';
+    &:before {
+      content: '> ';
     }
   }
 }
@@ -88,7 +82,6 @@ html * {
 }
 
 .terminal-output--input {
-  @include prompt();
   color: $cyan;
   font-weight: 800;
 }
@@ -124,7 +117,6 @@ html * {
 }
 
 .terminal-input {
-  @include prompt();
   @include fadeInFast();
 
   width: 100%;
