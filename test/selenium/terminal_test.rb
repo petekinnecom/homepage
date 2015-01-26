@@ -39,7 +39,6 @@ class TerminalTest < PortfolioSeleniumTest
     input.type(:right)
     assert_equal '', input.caret_char
 
-
     # TODO: implement up
     #input.type(:up)
     #assert_equal 'a', input.caret_char
@@ -60,6 +59,25 @@ class TerminalTest < PortfolioSeleniumTest
 
     input.type(['d', :left, :backspace])
     assert_equal 'ad', input.text
+  end
+
+  def test_delete
+    input = page.terminal.input
+
+    input.type('abcd')
+    assert_equal '', input.caret_char
+
+    input.type(:delete) #no-op, since caret at the end
+    assert_equal 'abcd', input.text
+    assert_equal '', input.caret_char
+
+    input.type(:left, :left, :delete)
+    assert_equal 'abd', input.text
+    assert_equal 'd', input.caret_char
+
+    input.type(:delete)
+    assert_equal 'ab', input.text
+    assert_equal '', input.caret_char
   end
 
   private
