@@ -33,12 +33,33 @@ class TerminalTest < PortfolioSeleniumTest
     assert_equal 'b', input.caret_char
     assert_equal 'adbc', input.text
 
+    input.type(:right)
+    assert_equal 'c', input.caret_char
+
+    input.type(:right)
+    assert_equal '', input.caret_char
+
+
     # TODO: implement up
     #input.type(:up)
     #assert_equal 'a', input.caret_char
 
     input.type(:enter)
     assert_equal '', input.text
+  end
+
+  def test_backspace
+    input = page.terminal.input
+
+    input.type('abc')
+    assert_equal '', input.caret_char
+
+    input.type(:backspace)
+    assert_equal 'ab', input.text
+    assert_equal '', input.caret_char
+
+    input.type(['d', :left, :backspace])
+    assert_equal 'ad', input.text
   end
 
   private

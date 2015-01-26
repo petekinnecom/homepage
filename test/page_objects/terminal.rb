@@ -4,9 +4,9 @@ class Terminal < AePageObjects::Element
       node.find('.caret').text
     end
 
-    def type(input)
-      keys = input.split('') if input.respond_to?(:split)
-      keys = [input] unless input.respond_to?(:each)
+    def type(keys)
+      keys = keys.split('') if keys.respond_to?(:split)
+      keys = [keys] unless keys.respond_to?(:each)
 
       keys.each do |key|
         node.native.send_keys(key)
