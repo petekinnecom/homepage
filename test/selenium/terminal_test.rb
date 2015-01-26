@@ -14,7 +14,7 @@ class TerminalTest < PortfolioSeleniumTest
   def test_moves_caret
     input = page.terminal.input
 
-    #assert_equal '', input.caret_char
+    assert_equal '', input.caret_char
     input.type('abc')
     assert_equal '', input.caret_char
 
