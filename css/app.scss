@@ -91,7 +91,7 @@ body {
   border: 1px solid $base0;
 }
 
-body[data-maximized="false"] {
+body[data-terminal-state="closed"] {
 
   .terminal {
     animation: minimize 2s;
@@ -106,7 +106,7 @@ body[data-maximized="false"] {
 
 }
 
-body[data-maximized="true"] {
+body[data-terminal-state="open"] {
 
   .terminal {
     animation: maximize 2s;
