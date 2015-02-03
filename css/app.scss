@@ -57,14 +57,17 @@ body {
   @include fadeIn(0.5s);
 }
 
+$terminal__open: 70%;
+$terminal__closed: 35px;
+$terminal__padding: 15px;
 .terminal {
   @include dark();
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
   min-width: 384px;
-  height: 35px;
+  height: $terminal__closed;
   width: 100%;
-  padding: 15px;
-  padding-top: 0px;
+  padding: $terminal__padding;
+  padding-bottom: 0px;
   position: fixed;
   overflow-y: scroll;
   z-index: 2;
@@ -98,7 +101,7 @@ body[data-terminal-state="closed"] {
   .terminal {
     animation: minimize 2s;
     -webkit-animation: minimize 2s; /* Safari and Chrome */
-    height: 35px;
+    height: $terminal__closed;
     opacity: 1;
   }
 
@@ -113,7 +116,7 @@ body[data-terminal-state="open"] {
   .terminal {
     animation: maximize 2s;
     -webkit-animation: maximize 2s; /* Safari and Chrome */
-    height: 600px;
+    height: $terminal__open;
     opacity: 0.9;
   }
 
@@ -131,24 +134,24 @@ body[data-terminal-state="open"] {
 
 @-webkit-keyframes maximize {
   0% {
-    height: 35px;
+    height: $terminal__closed;
     opacity: 1;
   }
 
   100% {
-    height: 600px;
+    height: $terminal__open;
     opacity: 0.9
   }
 }
 
 @-webkit-keyframes minimize {
   0% {
-    height: 600px;
+    height: $terminal__open;
     opacity: 0.9;
   }
 
   100% {
-    height: 35px;
+    height: $terminal__closed;
     opacity: 1;
   }
 }
@@ -185,7 +188,7 @@ body[data-terminal-state="open"] {
 }
 
 .terminal-output--line {
-  padding-top: 16px;
+  padding-bottom: $terminal__padding;
 }
 
 .terminal-output--input {
@@ -214,7 +217,8 @@ body[data-terminal-state="open"] {
 
   width: 100%;
   min-height: 1em;
-  padding-top: 15px;
+  /*padding-top: $terminal__padding;*/
+  padding-bottom: $terminal__padding;
 
   &:focus {
     outline: none;
