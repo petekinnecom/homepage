@@ -61,8 +61,9 @@ body {
   @include dark();
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
   min-width: 384px;
+  height: 21px;
   width: 100%;
-  padding: 16px;
+  padding: 15px;
   position: fixed;
   overflow-y: scroll;
   z-index: 2;
@@ -179,7 +180,11 @@ body[data-terminal-state="open"] {
 }
 
 .terminal-output {
-  margin-top: 0px;
+  margin: 0px;
+}
+
+.terminal-output--line {
+  padding-bottom: 16px;
 }
 
 .terminal-output--input {
