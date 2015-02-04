@@ -35,14 +35,17 @@ $green:     #859900;
 @mixin dark()  { @include rebase($base03,$base02,$base01,$base00,$base0,$base1,$base2,$base3)}
 
 html * {
-    color-profile: sRGB;
-    rendering-intent: auto;
+  color-profile: sRGB;
+  rendering-intent: auto;
+  font-size: 18px;
 }
 
 //END SOLARIZED
 
 body {
   margin: 0px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+   font-weight: 300;
 }
 
 html, body {height:100%;overflow:auto}
