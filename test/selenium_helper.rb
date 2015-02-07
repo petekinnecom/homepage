@@ -15,9 +15,25 @@ module SeleniumHelpers
     Capybara.visit([TEST_URL, path].join(""))
     MainPage.new
   end
+
+  def assert_eventually_equal(expected_value, callable)
+    values = []
+    passed = AePageObjects::Waiter.wait_until(3) do
+      current_value = callable.call
+      values << current_value
+      expected_value == current_value
+    end
+
+    if ! passed
+      puts "Expected value: \"#{expected_value}\""
+      puts "Acutal values: "
+      p values.uniq
+    end
+
+    assert passed, "failed :("
+  end
 end
 
 class PortfolioSeleniumTest < MiniTest::Test
-
   include SeleniumHelpers
 end

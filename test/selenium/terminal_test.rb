@@ -7,10 +7,9 @@ class TerminalTest < PortfolioSeleniumTest
   def test_loads_page
     page.terminal.input.node.click
     page.terminal.input.run("article koutouki")
-    sleep 1
 
-    assert_equal "Routing to article koutouki", page.terminal.outputs.last.text
-    assert_equal "Koutouki.org", page.title.text
+    assert_eventually_equal "Loaded article koutouki", proc { page.terminal.outputs.last.text }
+    assert_eventually_equal "Koutouki.org", proc { page.title.text }
   end
 
   def test_moves_caret
