@@ -230,6 +230,10 @@ body[data-terminal-state="open"] {
 
 }
 
+.fade-in {
+  @include fadeInFast();
+}
+
 .main-window {
   width: 70%;
   padding: 16px;
@@ -245,25 +249,36 @@ body[data-terminal-state="open"] {
 }
 
 
-@keyframes demo
+@-webkit-keyframes reverse-blur /* Safari and Chrome */
 {
-0% {opacity:0;}
-100% {opacity:1;}
+  0% {
+    -webkit-filter: blur(5px);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-filter: blur(0px);
+    opacity: 1;
+  }
+
 }
 
-@-moz-keyframes demo /* Firefox */
-{
-0% {opacity:0;}
-100% {opacity:1;}
+@keyframes demo {
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
 
-@-webkit-keyframes demo /* Safari and Chrome */
-{
-0% {opacity:0;}
-100% {opacity:1;}
+@-moz-keyframes demo { /* Firefox */
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
 
-@-o-keyframes demo /* Opera */ {
-0% {opacity:0;}
-100% {opacity:1;}
+@-webkit-keyframes demo {/* Safari and Chrome */
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes demo { /* Opera */
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
