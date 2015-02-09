@@ -262,6 +262,10 @@ body[data-terminal-state="open"] {
   width: 80%;
 }
 
+[data-article-name] {
+  display: none;
+}
+
 
 @-webkit-keyframes reverse-blur /* Safari and Chrome */
 {
