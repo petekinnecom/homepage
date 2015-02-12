@@ -13,11 +13,24 @@ namespace :assets do
   task :compile do
     `browserify node_modules/app/app.js -o build/assets/app.js`
     `browserify spec/spec_manifest.js -o test_site/compiled_specs.js`
-    `cp -R site/articles build/articles`
-     Rake::Task["assets:compile_index"].invoke
+     Rake::Task["assets:compile_articles"].invoke
   end
 
-  task :compile_index do
+  task :compile_articles do
+    `cp -R site/articles build/articles`
+
+    Dir.chdir('site/articles/chunks')
+    articles = Dir.glob('*.html')
+    Dir.chdir('../../../')
+
+    articles.each do |article|
+      compile("build/articles/#{article}")
+    end
+
+    compile("build/index.html")
+  end
+
+  def compile(file)
     read_file = File.open('site/index.html', 'r')
     new_lines = []
 
@@ -40,21 +53,11 @@ namespace :assets do
 
     read_file.close
 
-    File.open('build/index.html', 'w') do |f|
+    File.open(file, 'w') do |f|
       new_lines.each do |line|
         f.puts line
       end
     end
   end
-
-  #task :compile_articles do
-  #  template_lines = File.open('site/index.html', 'r').readlines
-  #  articles = Dir.glob('site/articles/*.html')
-
-  #  articles.each do |article|
-  #    File.open('build/
-  #  end
-
-  #end
 
 end
