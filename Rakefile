@@ -13,7 +13,7 @@ namespace :assets do
   task :compile do
     `browserify node_modules/app/app.js -o build/assets/app.js`
     `browserify spec/spec_manifest.js -o test_site/compiled_specs.js`
-    `cp -R site/articles build/article_chunks`
+    `cp -R site/articles build/articles`
      Rake::Task["assets:compile_index"].invoke
   end
 
@@ -30,7 +30,7 @@ namespace :assets do
         div_open  =  %{<div data-article-name="#{article_name}" style="display: none;">}
         div_close = "</div>"
 
-        article_contents = File.read("site/articles/#{file_name}").gsub(/\r/, '').gsub(/\n/, '')
+        article_contents = File.read("site/articles/chunks/#{file_name}").gsub(/\r/, '').gsub(/\n/, '')
 
         new_lines << [div_open, article_contents, div_close].join('')
       else
@@ -47,14 +47,14 @@ namespace :assets do
     end
   end
 
-  task :compile_articles do
-    template_lines = File.open('site/index.html', 'r').readlines
-    articles = Dir.glob('site/articles/*.html')
+  #task :compile_articles do
+  #  template_lines = File.open('site/index.html', 'r').readlines
+  #  articles = Dir.glob('site/articles/*.html')
 
-    articles.each do |article|
-      File.open('build/
-    end
+  #  articles.each do |article|
+  #    File.open('build/
+  #  end
 
-  end
+  #end
 
 end
