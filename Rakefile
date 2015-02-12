@@ -23,18 +23,19 @@ namespace :assets do
     articles = Dir.glob('*.html')
     Dir.chdir('../../../')
 
+    template_lines = File.open('site/index.html', 'r').readlines
+
     articles.each do |article|
-      compile("build/articles/#{article}")
+      compile("build/articles/#{article}", specified_template(template_lines, article))
     end
 
-    compile("build/index.html")
+    compile("build/index.html", specified_template(template_lines, 'welcome.html'))
   end
 
-  def compile(file)
-    read_file = File.open('site/index.html', 'r')
+  def compile(file, template_lines)
     new_lines = []
 
-    read_file.each_line do |line|
+    template_lines.each do |line|
       match = line.match(/<!--\* (.*) -->/) #eg: <!--* article_name -->
 
       if match
@@ -51,11 +52,18 @@ namespace :assets do
       end
     end
 
-    read_file.close
-
     File.open(file, 'w') do |f|
       new_lines.each do |line|
         f.puts line
+      end
+    end
+  end
+
+  def specified_template(template_lines, article_path)
+    [].tap do |new_lines|
+      template_lines.each do |line|
+        # remove the manual embedding, so that the automatic one doesn't write it twice
+        new_lines << line.gsub("<!--\* #{article_path} -->", '').gsub('<!-- container -->', "<!--* #{article_path} -->")
       end
     end
   end
