@@ -36,12 +36,13 @@ namespace :assets do
     new_lines = []
 
     template_lines.each do |line|
-      match = line.match(/<!--\* (.*) -->/) #eg: <!--* article_name -->
+      match = line.match(/<!--\*(?<visible>\*?) (?<article>(.*)) -->/) #eg: <!--* article_name -->
 
       if match
-        file_name = match[1]
-        article_name = match[1].gsub(/\.html$/, '')
-        div_open  =  %{<div data-article-name="#{article_name}" style="display: none;">}
+        visible = match[:visible].length > 0
+        file_name = match[:article]
+        article_name = match[:article].gsub(/\.html$/, '')
+        div_open  =  %{<div data-article-name="#{article_name}" style="display: #{visible ? "block" : "none"};">}
         div_close = "</div>"
 
         article_contents = File.read("site/articles/chunks/#{file_name}").gsub(/\r/, '').gsub(/\n/, '')
@@ -63,7 +64,7 @@ namespace :assets do
     [].tap do |new_lines|
       template_lines.each do |line|
         # remove the manual embedding, so that the automatic one doesn't write it twice
-        new_lines << line.gsub("<!--\* #{article_path} -->", '').gsub('<!-- container -->', "<!--* #{article_path} -->")
+        new_lines << line.gsub("<!--\* #{article_path} -->", '').gsub('<!-- container -->', "<!--** #{article_path} -->")
       end
     end
   end
