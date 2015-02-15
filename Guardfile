@@ -5,6 +5,7 @@
 # directories %w(app lib config test spec feature)
 directories ['site', 'node_modules', 'spec']
 
+ignore [/.*article_list.*/]
 ## Uncomment to clear the screen before every task
 # clearing :on
 
