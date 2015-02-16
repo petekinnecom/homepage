@@ -1,30 +1,29 @@
-class Page < Struct.new(:input_path, :output_path)
+class Page
+
+  attr_reader :base_dir, :folder, :name, :filename, :output_path, :html_path
+  private :base_dir, :folder, :name, :filename, :output_path, :html_path
 
   def initialize(input_path, output_path: nil)
-    super(input_path, output_path || input_path.sub(/\/chunks/, '').sub(/^site/, 'build'))
-  end
+    match = input_path.match(/^site\/(?<base_dir>.*)\/(?<folder>.*)\/chunks\/(?<filename>(?<name>.*)\.html)/)
 
-  def filename
-    File.basename(input_path)
-  end
+    @base_dir = match[:base_dir]
+    @folder = match[:folder]
+    @name = match[:name]
+    @filename = match[:filename]
+    @html_path = File.join('/', base_dir, folder, 'chunks', filename)
 
-  def name
-    filename.sub(/\.html$/, '')
+    @output_path = output_path || File.join('build', base_dir, folder, filename)
   end
 
   def reference
-    page_dir = input_path.match(/\/([^\/]+)\/chunks/)[1]
-    File.join(page_dir, filename)
-  end
-
-  def html_path
-    input_path.sub(/^site/, '')
+    File.join(folder, filename)
   end
 
   def info
     {
       name: name,
       path: html_path,
+      folder: folder
     }
   end
 
