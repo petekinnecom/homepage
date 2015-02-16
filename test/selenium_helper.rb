@@ -16,6 +16,17 @@ module SeleniumHelpers
     MainPage.new
   end
 
+  def setup
+    super
+    @page = visit('/')
+    @page.terminal.input.node.click
+
+    #ensure all the animations have finished
+    assert_eventually_equal true, proc {@page.terminal.outputs.visible?}
+    assert_eventually_equal 'Routing to default article', proc { @page.terminal.outputs.last.text }
+    assert_eventually_equal '', proc { @page.terminal.input.text }
+  end
+
   def assert_eventually_equal(expected_value, callable)
     values = []
     passed = AePageObjects::Waiter.wait_until(3) do
@@ -36,4 +47,5 @@ end
 
 class PortfolioSeleniumTest < MiniTest::Test
   include SeleniumHelpers
+  attr_accessor :page; private :page
 end

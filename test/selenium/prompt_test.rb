@@ -2,12 +2,10 @@ require 'selenium_helper'
 
 class PromptTest < PortfolioSeleniumTest
 
-  attr_accessor :page; private :page
-
   def test_loads_page
-    page.terminal.input.run("article koutouki")
+    page.terminal.input.run("page koutouki")
 
-    assert_eventually_equal "Loaded article koutouki", proc { page.terminal.outputs.last.text }
+    assert_eventually_equal "Loaded page koutouki", proc { page.terminal.outputs.last.text }
     assert_eventually_equal "Koutouki.org", proc { page.title.text }
   end
 
@@ -106,17 +104,4 @@ class PromptTest < PortfolioSeleniumTest
     input.type(:down)
     assert_equal '', input.text
   end
-
-  private
-
-  def setup
-    @page = visit('/')
-    @page.terminal.input.node.click
-
-    #ensure all the animations have finished
-    #assert_eventually_equal true, proc {@page.terminal.outputs.visible?}
-    #assert_eventually_equal 'Routing to default article', proc { @page.terminal.outputs.last.text }
-    assert_eventually_equal '', proc { @page.terminal.input.text }
-  end
-
 end
