@@ -50,13 +50,14 @@ body {
 
 html, body {height:100%;overflow:auto}
 
-a, a:visited {
+a, a:visited, *[data-input]{
   color: $blue;
   text-decoration: none;
-}
 
-a:hover {
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
+
 }
 
 body {
@@ -229,7 +230,6 @@ body[data-terminal-state="open"] {
   color: $red;
   @include fadeInFast()
 }
-
 
 .terminal-input {
   @include fadeInFast();
