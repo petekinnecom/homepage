@@ -125,7 +125,7 @@ body[data-terminal-state="closed"] {
     opacity: 1;
   }
 
-  .main-window {
+  .container {
     -webkit-animation: reverse-blur 2s;
   }
 
@@ -140,7 +140,7 @@ body[data-terminal-state="open"] {
     opacity: 0.9;
   }
 
-  .main-window {
+  .container {
     -webkit-filter: blur(5px);
     -webkit-animation: blur 2s;
     opacity: 0.7;
@@ -248,18 +248,23 @@ body[data-terminal-state="open"] {
   @include fadeInFast();
 }
 
-.main-window {
+.container {
   width: 70%;
   padding: 16px;
   padding-top: 100px;
 }
 
-.is-hijacking-link .main-window {
+.is-hijacking-link .container {
   opacity: 0.2;
 }
 
 .container {
   width: 80%;
+}
+
+.notifications {
+  padding: 0.5rem;
+  border: 1px solid $base0;
 }
 
 @-webkit-keyframes reverse-blur /* Safari and Chrome */

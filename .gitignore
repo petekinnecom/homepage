@@ -4,3 +4,4 @@ test_site/compiled_specs.js
 .sass-cache/
 notes.txt
 build/*
+nohup.out

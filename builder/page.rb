@@ -4,7 +4,7 @@ class Page
   private :base_dir, :folder, :name, :filename, :output_path, :html_path
 
   def initialize(input_path, output_path: nil)
-    match = input_path.match(/^site\/(?<base_dir>.*)\/(?<folder>.*)\/chunks\/(?<filename>(?<name>.*)\.html)/)
+    match = input_path.match(/^html\/(?<base_dir>.*)\/(?<folder>.*)\/chunks\/(?<filename>(?<name>.*)\.html)/)
 
     @base_dir = match[:base_dir]
     @folder = match[:folder]
@@ -38,7 +38,7 @@ class Page
         visible = match[:visible].length > 0
         file_name = File.basename(match[:page])
         dir_name = File.dirname(match[:page])
-        file_path = File.join('site/pages', dir_name, 'chunks', file_name)
+        file_path = File.join('html/pages', dir_name, 'chunks', file_name)
 
         page_name = match[:page].gsub(/\.html$/, '')
         div_open  =  %{<div data-page-name="#{page_name}" style="display: #{visible ? "block" : "none"};">}

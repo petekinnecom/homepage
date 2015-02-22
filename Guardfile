@@ -3,7 +3,7 @@
 
 ## Uncomment and set this to only include directories you want to watch
 # directories %w(app lib config test spec feature)
-directories ['site', 'node_modules', 'spec']
+directories ['html', 'node_modules', 'spec']
 
 ignore [/.*pages_data.*/]
 ## Uncomment to clear the screen before every task

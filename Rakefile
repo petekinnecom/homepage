@@ -20,11 +20,11 @@ namespace :assets do
   end
 
   task :compile_pages do
-    `cp -R site/pages build/pages`
+    `cp -R html/pages build/pages`
 
     pages = []
-    Dir.glob('site/pages/*').each do |dir|
-      PagesCompiler.compile(pages_in(dir), template: 'site/index.html')
+    Dir.glob('html/pages/*').each do |dir|
+      PagesCompiler.compile(pages_in(dir), template: 'html/index.html')
 
       pages << pages_in(dir).map {|p| Page.new(p) }
     end
