@@ -83,12 +83,9 @@ $terminal__padding: 14px;
 .terminal {
   @include dark();
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-  min-width: 384px;
   height: $terminal__closed;
   width: 100%;
-  padding: $terminal__padding;
-  padding-left: 21px;
-  padding-right: 21px;
+  padding-top: $terminal__padding;
   padding-bottom: 0px;
   position: fixed;
   overflow-y: scroll;
@@ -111,6 +108,11 @@ $terminal__padding: 14px;
     outline: none;
   }
 
+}
+
+.terminal-wrapper {
+  padding-left: 21px;
+  padding-right: 21px;
 }
 
 .caret {
