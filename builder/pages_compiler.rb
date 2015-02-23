@@ -1,7 +1,6 @@
 require_relative './template'
 require_relative './page'
 
-#TODO: This file is very MVP
 class PagesCompiler < Struct.new(:pages, :template)
 
   def self.compile(pages, template:)

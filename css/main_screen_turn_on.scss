@@ -1,0 +1,20 @@
+@import 'lib/solarized';
+
+.container {
+  max-width: 805px;
+  padding: 14px;
+  padding-top: 63px;
+  border-right: 1px solid #f9f9f9;
+  padding-left: 21px;
+  padding-right: 21px;
+}
+
+.is-hijacking-link .container {
+  opacity: 0.2;
+}
+
+.notifications {
+  padding: 0.5rem;
+  border-bottom: 1px solid $base0;
+}
+

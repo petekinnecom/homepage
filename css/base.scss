@@ -1,0 +1,44 @@
+@import 'lib/animation';
+@import 'lib/solarized';
+@import 'lib/fade_in';
+
+body {
+  @include light();
+  margin: 0px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size: 21px;
+  background-color: #fcfcfc;
+}
+
+html, body {height:100%;overflow:auto}
+
+a, a:visited, *[data-input]{
+  color: $blue;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+}
+
+*:focus {
+  outline: none;
+}
+
+ul {
+  margin-top: 7px;
+  margin-bottom: 7px;
+  padding-left: 42px;
+}
+
+h2 {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.fade-in {
+  @include fadeInFast();
+}
+

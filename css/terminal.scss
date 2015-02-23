@@ -1,0 +1,176 @@
+@import 'lib/solarized';
+@import 'lib/animation';
+@import 'lib/filters';
+@import 'base';
+
+$terminal__open: 70%;
+$terminal__closed: 35px;
+$terminal__padding: 14px;
+$terminal__resize_time: 0.5s;
+
+.terminal {
+  @include dark();
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  height: $terminal__closed;
+  width: 100%;
+  padding-top: $terminal__padding;
+  padding-bottom: 0px;
+  position: fixed;
+  overflow-y: scroll;
+  z-index: 2;
+  opacity: 1;
+
+  & [data-prompt-name="default"] {
+    &:before {
+      content: '$ ';
+    }
+  }
+
+  & [data-prompt-name="adventure"] {
+    &:before {
+      content: '> ';
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+}
+
+.terminal-wrapper {
+  padding-left: 21px;
+  padding-right: 21px;
+}
+
+.caret {
+  background-color: inherit;
+  border: 1px solid $base0;
+}
+
+body[data-terminal-state="closed"] {
+
+  .terminal {
+    @include animation(minimizeAnimation, $terminal__resize_time);
+    height: $terminal__closed;
+    opacity: 1;
+  }
+
+  .container {
+    /*@include animation(reverseBlurAnimation, $terminal__resize_time, $terminal__resize_time);*/
+  }
+
+}
+
+body[data-terminal-state="open"] {
+
+  .terminal {
+    @include animation(maximizeAnimation, $terminal__resize_time);
+    height: $terminal__open;
+    opacity: 0.9;
+  }
+
+  .container {
+    /* too slow :( */
+    /*@include animation(blurAnimation, $terminal__resize_time, $terminal__resize_time);*/
+    @include blur(5px);
+    opacity: 0.7;
+  }
+
+  .caret {
+    background-color: $base0;
+    color: $base03;
+  }
+}
+
+@include keyframe(maximizeAnimation){
+  0% {
+    height: $terminal__closed;
+    opacity: 1;
+  }
+
+  100% {
+    height: $terminal__open;
+    opacity: 0.9
+  }
+}
+
+@include keyframe(minimizeAnimation){
+  0% {
+    height: $terminal__open;
+    opacity: 0.9;
+  }
+
+  100% {
+    height: $terminal__closed;
+    opacity: 1;
+  }
+}
+
+@include keyframe(blurAnimation)
+{
+  0% {
+    @include blur(0px);
+    opacity: 1;
+  }
+
+  100% {
+    @include blur(5px);
+    opacity: 0.7;
+  }
+}
+
+@include keyframe(reverseBlurAnimation)
+{
+  0% {
+    @include blur(5px);
+    opacity: 0.7;
+  }
+
+  100% {
+    @include blur(0px);
+    opacity: 1;
+  }
+
+}
+
+.terminal-output {
+  margin: 0px;
+}
+
+.terminal-output--line {
+  padding-bottom: $terminal__padding;
+}
+
+.terminal-output--input {
+  color: $cyan;
+  font-weight: 800;
+}
+
+.terminal-output--log {
+  color: $base0;
+  @include fadeInFast();
+}
+
+.terminal-output--win {
+  color: $green;
+  @include fadeInFast()
+}
+
+.terminal-output--warn {
+  color: $red;
+  @include fadeInFast()
+}
+
+.terminal-input {
+  @include fadeInFast();
+
+  width: 100%;
+  min-height: 1em;
+  padding-bottom: $terminal__padding;
+
+  &:focus {
+    outline: none;
+  }
+
+}

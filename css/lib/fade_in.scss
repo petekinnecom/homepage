@@ -1,0 +1,14 @@
+@import 'animation';
+
+@mixin fadeIn($speed) {
+  @include animation(fadeInAnimation, $speed);
+}
+
+@mixin fadeInFast(){
+  @include animation(fadeInAnimation, 0.5s);
+}
+
+@include keyframe (fadeInAnimation){
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
