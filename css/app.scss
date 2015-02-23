@@ -249,22 +249,19 @@ body[data-terminal-state="open"] {
 }
 
 .container {
-  width: 70%;
+  width: 80%;
   padding: 16px;
-  padding-top: 100px;
+  padding-top: 63px;
 }
 
 .is-hijacking-link .container {
   opacity: 0.2;
 }
 
-.container {
-  width: 80%;
-}
-
 .notifications {
   padding: 0.5rem;
-  border: 1px solid $base0;
+  border-bottom: 1px solid $base0;
+  width: 100%;
 }
 
 @-webkit-keyframes reverse-blur /* Safari and Chrome */
