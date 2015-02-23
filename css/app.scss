@@ -60,6 +60,10 @@ body {
   background-color: #fcfcfc;
 }
 
+*:focus {
+  outline: none;
+}
+
 @mixin fadeIn($speed) {
   animation:demo $speed;
   -moz-animation:demo $speed; /* Firefox */
