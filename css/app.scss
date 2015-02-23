@@ -268,11 +268,17 @@ body[data-terminal-state="open"] {
 .notifications {
   padding: 0.5rem;
   border-bottom: 1px solid $base0;
-  width: 100%;
 }
 
 ul {
+  margin-top: 7px;
+  margin-bottom: 7px;
   padding-left: 42px;
+}
+
+h2 {
+  margin-top: 14px;
+  margin-bottom: 14px;
 }
 
 @-webkit-keyframes reverse-blur /* Safari and Chrome */
