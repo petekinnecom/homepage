@@ -20,7 +20,8 @@ namespace :assets do
   end
 
   task :compile_pages do
-    `cp -R html/pages build/pages`
+    `mkdir -p build/pages/`
+    `cp -R html/pages/ build/pages`
 
     pages = []
     Dir.glob('html/pages/*').each do |dir|
