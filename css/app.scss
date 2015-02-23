@@ -34,18 +34,13 @@ $green:     #859900;
 @mixin light() { @include rebase($base3,$base2,$base1,$base0,$base00,$base01,$base02,$base03)}
 @mixin dark()  { @include rebase($base03,$base02,$base01,$base00,$base0,$base1,$base2,$base3)}
 
-html * {
-  color-profile: sRGB;
-  rendering-intent: auto;
-  font-size: 18px;
-}
-
 //END SOLARIZED
 
 body {
   margin: 0px;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-   font-weight: 300;
+  font-weight: 300;
+  font-size: 21px;
 }
 
 html, body {height:100%;overflow:auto}
@@ -79,7 +74,8 @@ body {
 
 $terminal__open: 70%;
 $terminal__closed: 35px;
-$terminal__padding: 15px;
+$terminal__padding: 14px;
+
 .terminal {
   @include dark();
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
@@ -87,6 +83,8 @@ $terminal__padding: 15px;
   height: $terminal__closed;
   width: 100%;
   padding: $terminal__padding;
+  padding-left: 21px;
+  padding-right: 21px;
   padding-bottom: 0px;
   position: fixed;
   overflow-y: scroll;
@@ -249,9 +247,12 @@ body[data-terminal-state="open"] {
 }
 
 .container {
-  width: 80%;
-  padding: 16px;
+  max-width: 805px;
+  padding: 14px;
   padding-top: 63px;
+  border-right: 1px solid #f9f9f9;
+  padding-left: 21px;
+  padding-right: 21px;
 }
 
 .is-hijacking-link .container {
@@ -262,6 +263,10 @@ body[data-terminal-state="open"] {
   padding: 0.5rem;
   border-bottom: 1px solid $base0;
   width: 100%;
+}
+
+ul {
+  padding-left: 42px;
 }
 
 @-webkit-keyframes reverse-blur /* Safari and Chrome */
