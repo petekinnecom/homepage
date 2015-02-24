@@ -1,1 +1,14 @@
-nohup guard -i >> log/development.log & nohup bundle exec rake server:start >> log/development.log & nohup tail -f log/development.log & sass --watch css/app.scss:build/assets/app.css >> log/development.log 
+#!/bin/bash -e
+
+guard -i >> log/development.log &
+PIDS[0]=$!
+bundle exec rake server:start >> log/development.log &
+PIDS[1]=$!
+sass --watch css/app.scss:build/assets/app.css >> log/development.log 
+PIDS[2]=$!
+tail -f log/development.log &
+PIDS[3]=$!
+
+trap "kill ${PIDS[*]}" SIGINT
+
+wait
