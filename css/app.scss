@@ -1,3 +1,15 @@
 @import 'base';
 @import 'terminal';
 @import 'main_screen_turn_on';
+
+.notifications--terminal-enable {
+  @include desktop(){
+    display: none;
+  }
+}
+
+.notifications--terminal-disable {
+  @include mobile(){
+    display: none;
+  }
+}
