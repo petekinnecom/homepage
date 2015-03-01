@@ -1,0 +1,7 @@
+#!/bin/bash -e -x
+
+rm -rf deploy
+rake assets:compile
+cp -R build deploy
+uglifyjs build/assets/app.js > deploy/assets/app.js
+sass css/app.scss --style compressed > deploy/assets/app.css
