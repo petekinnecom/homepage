@@ -17,7 +17,10 @@ $terminal__resize_time: 0.5s;
   padding-top: $terminal__padding;
   padding-bottom: 0px;
   position: fixed;
-  overflow-y: scroll;
+  overflow-y: hidden;
+  &:hover {
+    overflow-y: auto;
+  }
   z-index: 2;
   opacity: 1;
 
