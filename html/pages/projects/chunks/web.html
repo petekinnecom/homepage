@@ -1,0 +1,100 @@
+<h1>Super Fun Bonus Scripts!</h1>
+<ul>
+  <li><a href="https://github.com/petekinnecom/sfb_scripts">on GitHub</a></li>
+  <li><a href="https://rubygems.org/gems/sfb_scripts">on RubyGems</a></li>
+</ul>
+
+<p>
+This is a project I've created to help optimize my development process.  There's two main scripts included in this gem: test_runner, and app_up.
+</p>
+
+<p>
+I've written short summaries below, but you can also check out the <a href="https://github.com/petekinnecom/sfb_scripts">README on GitHub</a>
+</p>
+
+<h3>Test Runner</h3>
+
+<img src='pics/sfb_scripts.test_runner.png' />
+
+<p>
+Running tests on the command line in ruby looks something like this:
+<pre>
+ruby -I test test/unit/thing_test.rb --name=/test_name/
+</pre>
+
+That's a lot of stuff to type.  Especially if you like to run tests.
+</p>
+
+<p>
+Instead, let my test_runner script run tests for you.  Just give it a string to search for and it will probably find and run the correct test.  It even understands inlined gems and engines.  It looks like this:
+<pre>
+test_runner find test_name
+test_runner find file_name
+test_runner find "^RegExp"
+</pre>
+
+Or, if you like to optimize, make a shortcut:
+<pre>
+t test_something
+</pre>
+
+My quality of life has risen three qualities since I made it.
+</p>
+
+<p>
+<a href="https://github.com/petekinnecom/sfb_scripts#test_runner------">Read the README On GitHub</a>
+</p>
+
+<h3>AppUp</h3>
+
+<img src='pics/sfb_scripts.app_up.png' />
+
+<p>
+When working on a project with a collection of inlined engines, each with their own Gemfile and databases, it can be hard to keep all of that up to date.  You can either manually bundle install and migrate when you need to or you can have my script do it for you.  AppUp will watch a git action that you do, compare the diffs, and bundle/migrate where necessary.
+</p>
+
+<p>
+My own personal happiness has increased by twelve happinesses since I've started using it.
+</p>
+
+<p>
+<a href="https://github.com/petekinnecom/sfb_scripts#test_runner------">Read the README On GitHub</a>
+</p>
+
+<hr>
+
+<h1>Koutouki.org</h1>
+
+<img src='pics/koutouki.png' />
+
+<ul>
+  <li><a href="/projects/files/kinnecom.koutouki.source.zip">source code (here be dragons)</a></li>
+</ul>
+
+<p>
+Began in summer 2006, Koutouki was my first major web development project.  Built entirely from the ground up, it was to be a debating forum for my friends.  An anonymous debate between two users would be held for three days while users voted for the side of their choice.  At the end of the debate, the user names were revealed and the points were awarded.  
+</p>
+
+<p>
+The site was pretty substantial.  It had a leader board, individual profiles, and would even send you a happy birthday email.  We had a few strangers find us on google and join in the fun. 
+</p>
+
+<p>
+The code is a decade-old mess of dollar signs, msyql, and spaghetti, so I've linked it below just for the fun-factor. It serves as a testament to the amount of work I put into the site, how much I cared, and ... how much I had to learn ...
+</p>
+
+<hr>
+
+<h1>Grades online</h1>
+
+<p>
+While teaching high school, I wanted students to have up-to-date information about their grades. My school didn't have any online grading system, so ... I built my own!  It was a super simple php application that simply parsed my grading spreadsheet.  Each student had a login and could see their grades.  Parents and teachers liked it. I made a small blog post about it and posted the code.
+</p>
+
+<p>
+Then I went off to grad school and got on with my life.
+</p>
+
+<p>
+A few years later, I got an email from a man in Kashmir who had found my little blog, downloaded the code, and needed help getting it set up. The internet is a crazy thing.
+</p>
