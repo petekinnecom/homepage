@@ -169,3 +169,12 @@ body[data-terminal-state="open"] {
   }
 
 }
+
+.terminal-folder {
+  color: $magenta !important;
+
+}
+
+  .terminal-folder--active {
+    color: $green !important;
+  }
