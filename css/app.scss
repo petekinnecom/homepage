@@ -1,18 +1,8 @@
 @import 'base';
 @import 'terminal';
 @import 'main_screen_turn_on';
+@import 'footer';
 
-.notifications--terminal-enable {
-  @include desktop(){
-    display: none;
-  }
-}
-
-.notifications--terminal-disable {
-  @include mobile(){
-    display: none;
-  }
-}
 
 .notifications {
   padding-bottom: 0.5rem;
@@ -22,3 +12,4 @@
 .work-title {
   font-weight: 800;
 }
+
