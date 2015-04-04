@@ -1,6 +1,17 @@
 @import 'lib/solarized';
 
 .container {
+}
+
+.container {
+  background-color: #fcfcfc;
+}
+
+.is-hijacking-link .container {
+  opacity: 0.2;
+}
+
+.main-screen-turn-on {
   max-width: 805px;
   padding: 14px;
   padding-top: 63px;
@@ -8,8 +19,4 @@
   padding-left: 21px;
   padding-right: 21px;
   line-height: 28px;
-}
-
-.is-hijacking-link .container {
-  opacity: 0.2;
 }
