@@ -19,7 +19,7 @@ class PagesCompiler < Struct.new(:pages, :template)
       page.compile(template)
     end
 
-    default_page = Page.new('html/pages/articles/chunks/welcome.html', output_path: 'build/index.html')
+    default_page = Page.new('html/pages/articles/chunks/about.html', output_path: 'build/index.html')
     default_page.compile(template)
   end
 

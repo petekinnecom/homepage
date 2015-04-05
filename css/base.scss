@@ -11,7 +11,11 @@ body {
   background-color: #eee;
 }
 
-html, body {height:100%;overflow:auto}
+html, body {
+  height: 100%;
+  overflow: auto;
+  line-height: 1;
+}
 
 a, a:visited, *[data-input]{
   color: $blue;
@@ -43,7 +47,7 @@ h2 {
 }
 
 img {
-  max-width: 80%;
+  max-width: 100%;
   border: 1px solid #eee;
 }
 
