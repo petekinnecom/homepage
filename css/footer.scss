@@ -6,6 +6,9 @@
   color: #839496;
   background-color: #eee;
 
+  /* fixes chrome bug where opacity not updated */
+  -webkit-transform: translateZ(0);
+
   .footer-title {
     margin: 0;
   }

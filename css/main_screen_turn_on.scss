@@ -1,14 +1,13 @@
 @import 'lib/solarized';
 
 .container {
-}
-
-.container {
   background-color: #fcfcfc;
 }
 
-.is-hijacking-link .container {
-  opacity: 0.2;
+.is-hijacking-link {
+  .main-screen-turn-on, .footer {
+    opacity: 0.2;
+  }
 }
 
 .main-screen-turn-on {
