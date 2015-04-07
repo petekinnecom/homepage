@@ -13,15 +13,4 @@
     margin: 0;
   }
 
-  .terminal-enable {
-    @include desktop(){
-      display: none;
-    }
-  }
-
-  .terminal-disable {
-    @include mobile(){
-      display: none;
-    }
-  }
 }

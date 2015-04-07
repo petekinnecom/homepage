@@ -5,7 +5,7 @@
 }
 
 .is-hijacking-link {
-  .main-screen-turn-on, .footer {
+  .container {
     opacity: 0.2;
   }
 }
@@ -26,7 +26,7 @@
 
 .image-caption {
   margin: 0 0 0 0px;
-  font-size: 25px;
+  font-size: 21px;
 
   &:before {
     content: "\27F6"

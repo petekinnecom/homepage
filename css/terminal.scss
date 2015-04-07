@@ -61,7 +61,6 @@ body[data-terminal-state="closed"] {
   }
 
   .container {
-    opacity: 1;
     @include transition(all, $terminal__resize_time);
   }
 
