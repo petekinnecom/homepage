@@ -1,38 +1,41 @@
+@import 'lib/sass_import_once';
 @import 'lib/solarized';
 
-.container {
-  background-color: #fcfcfc;
-}
-
-.is-hijacking-link {
+@include exports('main_screen_turn_on'){
   .container {
-    opacity: 0.2;
-  }
-}
-
-.main-screen-turn-on {
-  max-width: 805px;
-  padding: 14px;
-  padding-top: 63px;
-  border-right: 1px solid #f9f9f9;
-  padding-left: 21px;
-  padding-right: 21px;
-  line-height: 28px;
-
-  h1, h2, h3, h4 {
-    line-height: 1;
-  }
-}
-
-.image-caption {
-  margin: 0 0 0 0px;
-  font-size: 21px;
-
-  &:before {
-    content: "\27F6"
+    background-color: #fcfcfc;
   }
 
-  .image-caption--text {
-    font-size: 16px;
+  .is-hijacking-link {
+    .container {
+      opacity: 0.2;
+    }
+  }
+
+  .main-screen-turn-on {
+    max-width: 805px;
+    padding: 14px;
+    padding-top: 63px;
+    border-right: 1px solid #f9f9f9;
+    padding-left: 21px;
+    padding-right: 21px;
+    line-height: 28px;
+
+    h1, h2, h3, h4 {
+      line-height: 1;
+    }
+  }
+
+  .image-caption {
+    margin: 0 0 0 0px;
+    font-size: 21px;
+
+    &:before {
+      content: "\27F6"
+    }
+
+    .image-caption--text {
+      font-size: 16px;
+    }
   }
 }

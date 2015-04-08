@@ -1,74 +1,77 @@
+@import 'lib/sass_import_once';
 @import 'lib/animation';
 @import 'lib/solarized';
 @import 'lib/fade_in';
 
-body {
-  @include light();
-  margin: 0px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
-  font-size: 21px;
-  background-color: #eee;
-}
-
-html, body {
-  height: 100%;
-  overflow: auto;
-  line-height: 1;
-}
-
-a, a:visited, *[data-input]{
-  color: $blue;
-  text-decoration: none;
-
-  &:hover {
-    cursor: pointer;
+@include exports('base') {
+  body {
+    @include light();
+    margin: 0px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: 21px;
+    background-color: #eee;
   }
 
-}
+  html, body {
+    height: 100%;
+    overflow: auto;
+    line-height: 1;
+  }
 
-*:focus {
-  outline: none;
-}
+  a, a:visited, *[data-input]{
+    color: $blue;
+    text-decoration: none;
 
-ul {
-  margin-top: 7px;
-  margin-bottom: 7px;
-  padding-left: 42px;
-  float: left;
-  list-style: none;
-}
+    &:hover {
+      cursor: pointer;
+    }
 
-li {
-  border-bottom: 1px solid #ccc;
-  padding-top: 11px;
-  padding-bottom: 6px;
-}
+  }
 
-.list-container:before,
-.list-container:after {
-  content: " ";
-  display: table;
-}
+  *:focus {
+    outline: none;
+  }
 
-.list-container:after {
-  clear: both;
-}
+  ul {
+    margin-top: 7px;
+    margin-bottom: 7px;
+    padding-left: 42px;
+    float: left;
+    list-style: none;
+  }
 
-h2 {
-  margin-top: 14px;
-  margin-bottom: 14px;
-}
+  li {
+    border-bottom: 1px solid #ccc;
+    padding-top: 11px;
+    padding-bottom: 6px;
+  }
 
-.fade-in {
-  @include fadeInFast();
-}
+  .list-container:before,
+  .list-container:after {
+    content: " ";
+    display: table;
+  }
 
-img {
-  max-width: 100%;
-  border: 1px solid #eee;
-}
+  .list-container:after {
+    clear: both;
+  }
 
-pre {
-  overflow-x: scroll;
+  h2 {
+    margin-top: 14px;
+    margin-bottom: 14px;
+  }
+
+  .fade-in {
+    @include fadeInFast();
+  }
+
+  img {
+    max-width: 100%;
+    border: 1px solid #eee;
+  }
+
+  pre {
+    overflow-x: scroll;
+  }
 }
