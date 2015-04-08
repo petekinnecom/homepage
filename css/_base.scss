@@ -33,28 +33,30 @@
     outline: none;
   }
 
-  ul {
-    margin-top: 7px;
-    margin-bottom: 7px;
-    padding-left: 42px;
-    float: left;
-    list-style: none;
-  }
+  .list--underscored {
+    ul {
+      margin-top: 7px;
+      margin-bottom: 7px;
+      padding-left: 42px;
+      float: left;
+      list-style: none;
+    }
 
-  li {
-    border-bottom: 1px solid #ccc;
-    padding-top: 11px;
-    padding-bottom: 6px;
-  }
+    li {
+      border-bottom: 1px solid #ccc;
+      padding-top: 11px;
+      padding-bottom: 6px;
+    }
 
-  .list-container:before,
-  .list-container:after {
-    content: " ";
-    display: table;
-  }
+    &:before,
+    &:after {
+      content: " ";
+      display: table;
+    }
 
-  .list-container:after {
-    clear: both;
+    &:after {
+      clear: both;
+    }
   }
 
   h2 {
