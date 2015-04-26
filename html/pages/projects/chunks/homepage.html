@@ -2,18 +2,28 @@
 
 <div class="list--underscored">
   <ul>
-    <li><a href="">on github</a></li>
+    <li><a href="https://github.com/petekinnecom/homepage">on github</a></li>
   </ul>
 </div>
 
 <p>
-This site is a custom built, single page app built using <a href="http://browserify.org/">browserify</a>.  It's all javascript and static html, there is no backend. There are custom build steps for development and production.  And a <a href="#">super simple deploy command</a>.
+This site is a custom built, single page app built using <a href="http://browserify.org/">browserify</a>.  It's all javascript and static html, there is no backend. There are custom build steps for development and production.  And a <a href="https://github.com/petekinnecom/homepage/blob/master/script/deploy">super simple deploy command</a>.
+</p>
+
+<h3>the terminal:</h3>
+
+<p>
+All commands are run through the terminal, even navigation. It has a registry of commands, using regular expressions to find the correct handler. Each handler can operate synchronously or asynchronously.
+</p>
+
+<p>
+There is no easy way to use css to create the "block caret" that's found in the terminal, so I built <a href="https://github.com/petekinnecom/homepage/tree/master/node_modules/app/terminal/input/prompt">my own input element</a>.  This does not work on mobile, because there is no way to use javascript to show the keyboard. I tried using hidden inputs to trick mobile browsers into showing the keyboard, but it gets ugly very quickly.
 </p>
 
 <h3>on page load:</h3>
 
 <p>
-Each "page" is saved as an html snippet (see the snippet driving this page <a href="#">here</a>).  When routed to "/pages/projects/homepage.html", the app will load the snippet and display it inside of the layout. I've built in two optimizations to this process:
+Each "page" is saved as an html snippet (see the snippet driving this page <a href="https://github.com/petekinnecom/homepage/blob/master/html/pages/projects/chunks/homepage.html">here</a>).  When routed to "/pages/projects/homepage.html", the app will load the snippet and display it inside of the layout. I've built in two optimizations to this process:
 </p>
 
 <ol>
@@ -25,18 +35,9 @@ Each "page" is saved as an html snippet (see the snippet driving this page <a hr
 
   <li>
     <p>
-    In order to speed up navigation, I built a "cache machine" to pre-fetch all snippets.  Check out the network pane in the developer tools to see it in action.  (I wrote this bullet point just to say "cache machine" cause I'm proud of that name).
+    In order to speed up navigation, I built a "cache machine" to pre-fetch all snippets. (I wrote this bullet point just to say "cache machine" cause I'm proud of that name).
     </p>
   </li>
 </ol>
 
 
-<h3>the terminal:</h3>
-
-<p>
-All commands are run through the terminal, even navigation. It has a registry of commands, using regular expressions to find the correct handler. Each handler can operate synchronously or asynchronously.
-</p>
-
-<p>
-There is no easy way to use css to create the "block caret" that's found in the terminal, so I built <a href="#">my own input element</a>.  This does not work on mobile, because there is no way to use javascript to show the keyboard. I tried using hidden inputs to trick mobile browsers into showing the keyboard, but it gets ugly very quickly.
-</p>
