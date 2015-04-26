@@ -7,7 +7,7 @@
 </div>
 
 <p>
-This site is a custom built, single page app built using <a href="https://nodejs.org/">node</a> and <a href="http://browserify.org/">browserify</a>.  It's all javascript and static html, there is no backend. There are custom build steps for development and production.  And a <a href="#">super simple deploy command</a>.
+This site is a custom built, single page app built using <a href="http://browserify.org/">browserify</a>.  It's all javascript and static html, there is no backend. There are custom build steps for development and production.  And a <a href="#">super simple deploy command</a>.
 </p>
 
 <h3>on page load:</h3>
@@ -19,17 +19,13 @@ Each "page" is saved as an html snippet (see the snippet driving this page <a hr
 <ol>
   <li>
     <p>
-    If you navigate directly to "/pages/projects/homepage.html", then the default behavior is not ideal. You would load the page skeleton, then the application javascript.  The javascript would then detect the url and make an ajax request for the specified html snippet.  Displaying the snippet would be the last action taken. <i>This is backwards.</i> The text you requested should be the <i>first</i> thing displayed.
-    </p>
-
-    <p>
-  To optimize the page load, the build step takes each html snippet and renders it inside the skeleton. It saves this page in the appropriate location. So, when you navigate directly to "/pages/projects/homepage.html", the first thing you load is the article text.  The application javascript is loaded last.
+    The build step pre-renders all pages for better, faster, stronger page load.
     </p>
   </li>
 
   <li>
     <p>
-    In order to speed up navigation, I built a "cache machine" (I'm really proud of that name...) to pre-fetch all snippets.  Check out the network pane in the developer tools to see it in action.
+    In order to speed up navigation, I built a "cache machine" to pre-fetch all snippets.  Check out the network pane in the developer tools to see it in action.  (I wrote this bullet point just to say "cache machine" cause I'm proud of that name).
     </p>
   </li>
 </ol>
@@ -43,8 +39,4 @@ All commands are run through the terminal, even navigation. It has a registry of
 
 <p>
 There is no easy way to use css to create the "block caret" that's found in the terminal, so I built <a href="#">my own input element</a>.  This does not work on mobile, because there is no way to use javascript to show the keyboard. I tried using hidden inputs to trick mobile browsers into showing the keyboard, but it gets ugly very quickly.
-</p>
-
-<p>
-Each command run has the option to remain in control of the terminal.  All subsequent input is piped to that command.  Try running "adventure" to see a process take over the terminal.
 </p>
