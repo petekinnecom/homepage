@@ -8,3 +8,5 @@ deploy/*
 nohup.out
 nginx.conf
 media/
+node_modules/.bin
+node_modules/browserify
