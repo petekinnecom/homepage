@@ -10,4 +10,4 @@ gem 'capybara'
 gem 'selenium-webdriver'
 gem 'sass', '3.4.13'
 
-ruby '2.1.5'
+ruby '2.2.2'

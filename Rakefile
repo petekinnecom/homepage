@@ -20,8 +20,8 @@ namespace :assets do
   end
 
   task :compile_pages do
-    `mkdir -p build/pages/`
-    `cp -R html/pages/ build/pages`
+    `mkdir -p build`
+    `cp -r html/pages build/pages`
 
     pages = []
     Dir.glob('html/pages/*').each do |dir|
@@ -35,8 +35,8 @@ namespace :assets do
   private
 
   def compile_javascript
-    `browserify node_modules/app/app.js -o build/assets/app.js`
-    `browserify spec/spec_manifest.js -o test_site/compiled_specs.js`
+    `nodejs node_modules/browserify/bin/cmd.js node_modules/app/app.js -o build/assets/app.js`
+    `nodejs node_modules/browserify/bin/cmd.js spec/spec_manifest.js -o test_site/compiled_specs.js`
   end
 
   def build_page_list(pages)
