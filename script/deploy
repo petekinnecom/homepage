@@ -1,7 +1,9 @@
+#!/bin/bash -ex
+
 rm -rf deploy
 rake assets:compile
 cp -R build deploy
-uglifyjs build/assets/app.js > deploy/assets/app.js
+./node_modules/uglifyjs/bin/uglifyjs build/assets/app.js > deploy/assets/app.js
 sass css/app.scss --style compressed > deploy/assets/app.css
 ssh petekinne.com rm -rf /var/apps/portfolio/*
 scp -r deploy/* petekinne.com:/var/apps/portfolio/
