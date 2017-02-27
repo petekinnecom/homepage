@@ -35,8 +35,8 @@ namespace :assets do
   private
 
   def compile_javascript
-    `nodejs node_modules/browserify/bin/cmd.js node_modules/app/app.js -o build/assets/app.js`
-    `nodejs node_modules/browserify/bin/cmd.js spec/spec_manifest.js -o test_site/compiled_specs.js`
+    `node node_modules/browserify/bin/cmd.js node_modules/app/app.js -o build/assets/app.js`
+    `node node_modules/browserify/bin/cmd.js spec/spec_manifest.js -o test_site/compiled_specs.js`
   end
 
   def build_page_list(pages)
